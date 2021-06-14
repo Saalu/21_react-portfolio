@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import PortfolioList from "../portfolio-list/PortfolioList";
+import { useEffect, useState } from "react";
+import PortfolioList from "../portfolioList/PortfolioList";
 import "./portfolio.scss";
 import {
   featuredPortfolio,
@@ -9,10 +9,9 @@ import {
   contentPortfolio,
 } from "../../data";
 
-function Portfolio() {
+export default function Portfolio() {
   const [selected, setSelected] = useState("featured");
   const [data, setData] = useState([]);
-
   const list = [
     {
       id: "featured",
@@ -64,18 +63,20 @@ function Portfolio() {
       <ul>
         {list.map((item) => (
           <PortfolioList
-            key={item.id}
-            active={selected === item.id}
-            id={item.id}
             title={item.title}
+            active={selected === item.id}
             setSelected={setSelected}
+            id={item.id}
           />
         ))}
       </ul>
       <div className="container">
         {data.map((d) => (
-          <div className="item" key={d.id}>
-            <img src={d.img} alt="image-here" />
+          <div className="item">
+            <img
+              src={d.img}
+              alt=""
+            />
             <h3>{d.title}</h3>
           </div>
         ))}
@@ -83,5 +84,3 @@ function Portfolio() {
     </div>
   );
 }
-
-export default Portfolio;
