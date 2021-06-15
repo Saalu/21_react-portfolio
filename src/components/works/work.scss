@@ -27,6 +27,7 @@
     position: absolute;
     left: 0;
     transition: all 1s ease-out;
+
     .container {
       width: 100vw;
       display: flex;
@@ -49,12 +50,12 @@
           align-items: center;
           justify-content: center;
 
-          .leftContainer {
+          .leftcontainer {
             width: 90%;
             height: 70%;
             display: flex;
             flex-direction: column;
-            justify-content: space-around;
+            justify-content: space-between;
 
             .imgContainer {
               width: 40px;
@@ -78,10 +79,12 @@
             span {
               font-size: 12px;
               font-weight: 600;
+              text-decoration: underline;
               cursor: pointer;
             }
           }
         }
+
         .right {
           flex: 8;
           height: 100%;
